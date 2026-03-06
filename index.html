@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eleanore & Samson 돌잔치 — Predictions</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #a07820;
+    --gold-light: #c9a96e;
+    --cream: #fdf8f2;
+    --brown-dark: #1a0f00;
+    --brown-mid: #5a3e1b;
+    --eleanore: #5a7a5a;
+    --eleanore-light: #eef4ee;
+    --eleanore-mid: #8aaa8a;
+    --samson: #1a5fa8;
+    --samson-light: #e4eefa;
+    --samson-mid: #5a90d4;
+  }
+
+  body {
+    background: #ede8e0;
+    min-height: 100vh;
+    font-family: 'Cormorant Garamond', serif;
+    padding: 30px 16px 60px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    background: var(--cream);
+    border-radius: 6px;
+    box-shadow: 0 12px 50px rgba(0,0,0,0.15);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Top gold border accent */
+  .page-top-bar {
+    height: 5px;
+    background: linear-gradient(to right, var(--eleanore), var(--gold), var(--samson));
+  }
+
+  .page-inner {
+    padding: 40px 44px 50px;
+    position: relative;
+  }
+
+  /* Decorative border */
+  .page-inner::before {
+    content: '';
+    position: absolute;
+    inset: 14px;
+    border: 1px solid #d4bc93;
+    pointer-events: none;
+    border-radius: 3px;
+  }
+
+  /* BG deco */
+  .bg-deco {
+    position: absolute;
+    opacity: 0.035;
+    pointer-events: none;
+    font-family: 'Noto Serif KR', serif;
+    color: #a07820;
+    z-index: 0;
+  }
+  .bg-deco-1 { top: -10px; right: 0; font-size: 200px; }
+  .bg-deco-2 { bottom: 20px; left: -10px; font-size: 180px; }
+
+  /* Header */
+  .header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .subtitle-top {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #8a6820;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .title-main {
+    font-weight: 400;
+    font-size: 38px;
+    color: var(--brown-dark);
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .title-korean {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+  }
+  .divider-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px auto;
+  }
+  .div-line {
+    width: 70px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+  .div-line.r { background: linear-gradient(to left, transparent, var(--gold)); }
+  .div-diamond {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .floral { color: var(--gold); font-size: 14px; letter-spacing: 8px; opacity: 0.9; text-align: center; margin: 4px 0 20px; }
+
+  .intro {
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--brown-mid);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  /* Items reference grid */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .item-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 14px 8px 12px;
+    background: rgba(255,255,255,0.75);
+    border: 1px solid #e8d9c0;
+    border-radius: 4px;
+    position: relative;
+  }
+  .item-card::before {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 0.5px solid #f0e4cc;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+  .item-icon { font-size: 32px; margin-bottom: 7px; line-height: 1; }
+  .item-name {
+    font-weight: 700;
+    font-size: 10.5px;
+    color: var(--brown-dark);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    line-height: 1.2;
+  }
+  .item-divider-sm { width: 16px; height: 1px; background: var(--gold); margin: 0 auto 5px; }
+  .item-meaning {
+    font-style: italic;
+    font-size: 10.5px;
+    color: var(--brown-mid);
+    line-height: 1.45;
+  }
+
+  /* ── PREDICTION SECTION ── */
+  .prediction-wrapper {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .pred-block {
+    border-radius: 6px;
+    padding: 20px 16px 18px;
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .pred-block::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    pointer-events: none;
+  }
+
+  .pred-block.eleanore {
+    border-color: var(--eleanore-mid);
+    background: var(--eleanore-light);
+  }
+  .pred-block.samson {
+    border-color: var(--samson-mid);
+    background: var(--samson-light);
+  }
+
+  .pred-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .pred-emoji { font-size: 22px; margin-bottom: 4px; }
+  .pred-name-eng {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1px;
+    display: block;
+  }
+  .eleanore .pred-name-eng { color: var(--eleanore); }
+  .samson .pred-name-eng { color: var(--samson); }
+
+  .pred-name-kor {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    display: block;
+    margin-top: 1px;
+  }
+  .eleanore .pred-name-kor { color: var(--eleanore); opacity: 0.8; }
+  .samson .pred-name-kor { color: var(--samson); opacity: 0.8; }
+
+  .pred-divider {
+    height: 1px;
+    margin: 10px auto 14px;
+    width: 60%;
+  }
+  .eleanore .pred-divider { background: var(--eleanore-mid); }
+  .samson .pred-divider { background: var(--samson-mid); }
+
+  .pred-instruction {
+    font-style: italic;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--brown-mid);
+  }
+
+  /* Clickable item buttons */
+  .pick-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+  }
+
+  .pick-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 9px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.18s;
+    border: 1.5px solid transparent;
+    font-family: 'Cormorant Garamond', serif;
+    text-align: left;
+    width: 100%;
+  }
+
+  .eleanore .pick-btn:hover {
+    background: white;
+    border-color: var(--eleanore-mid);
+  }
+  .samson .pick-btn:hover {
+    background: white;
+    border-color: var(--samson-mid);
+  }
+
+  .eleanore .pick-btn.selected {
+    background: white;
+    border-color: var(--eleanore);
+    box-shadow: 0 0 0 3px rgba(90,122,90,0.15);
+  }
+  .samson .pick-btn.selected {
+    background: white;
+    border-color: var(--samson);
+    box-shadow: 0 0 0 3px rgba(26,95,168,0.15);
+  }
+
+  .pick-btn-icon { font-size: 18px; flex-shrink: 0; }
+  .pick-btn-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: var(--brown-dark);
+    line-height: 1.2;
+  }
+
+  .selected-display {
+    margin-top: 14px;
+    text-align: center;
+    min-height: 28px;
+  }
+  .selected-display .chosen-label {
+    font-style: italic;
+    font-size: 12px;
+    color: var(--brown-mid);
+  }
+  .eleanore .selected-display .chosen-value {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--eleanore);
+  }
+  .samson .selected-display .chosen-value {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--samson);
+  }
+
+  /* Name field */
+  .name-section {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid #e8d9c0;
+    border-radius: 4px;
+    padding: 18px 24px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .name-label {
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .name-label .eng {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--brown-dark);
+    display: block;
+    letter-spacing: 0.5px;
+  }
+  .name-label .kor {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    display: block;
+  }
+  .name-divider-v {
+    width: 1px;
+    height: 30px;
+    background: #d4bc93;
+    flex-shrink: 0;
+  }
+  .name-input {
+    flex: 1;
+    border: none;
+    border-bottom: 1.5px solid var(--gold);
+    background: transparent;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--brown-dark);
+    padding: 4px 4px 4px 6px;
+    outline: none;
+  }
+  .name-input::placeholder {
+    color: #c4a96a;
+    font-style: italic;
+    font-size: 13px;
+  }
+
+  /* Submit */
+  .submit-area {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .submit-btn {
+    background: linear-gradient(135deg, #a07820, #c9a96e);
+    color: white;
+    border: none;
+    padding: 14px 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 3px 14px rgba(160,120,32,0.3);
+  }
+  .submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 18px rgba(160,120,32,0.4);
+  }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled {
+    background: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .prize-note {
+    font-style: italic;
+    font-size: 12px;
+    color: var(--brown-mid);
+    margin-top: 10px;
+  }
+
+  /* Success state */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .success-screen.visible { display: block; }
+  .success-emoji { font-size: 52px; margin-bottom: 16px; }
+  .success-title {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--brown-dark);
+    margin-bottom: 8px;
+  }
+  .success-sub {
+    font-style: italic;
+    font-size: 14px;
+    color: var(--brown-mid);
+    margin-bottom: 20px;
+  }
+  .success-picks {
+    display: inline-flex;
+    gap: 20px;
+    background: white;
+    border: 1px solid #e8d9c0;
+    border-radius: 6px;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+  }
+  .success-pick { text-align: center; }
+  .success-pick .sp-name { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .eleanore-color { color: var(--eleanore); }
+  .samson-color { color: var(--samson); }
+  .success-pick .sp-value { font-size: 15px; font-style: italic; color: var(--brown-dark); }
+
+  /* Error */
+  .error-msg {
+    color: #b83232;
+    font-style: italic;
+    font-size: 12px;
+    margin-top: 8px;
+    display: none;
+  }
+  .error-msg.visible { display: block; }
+
+  /* Footer */
+  .footer-bar {
+    text-align: center;
+    padding: 14px 0 6px;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-korean {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 3px;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 600px) {
+    .page-inner { padding: 28px 20px 36px; }
+    .prediction-wrapper { grid-template-columns: 1fr; gap: 14px; }
+    .items-grid { grid-template-columns: repeat(3, 1fr); }
+    .title-main { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="page-top-bar"></div>
+  <div class="page-inner">
+
+    <div class="bg-deco bg-deco-1">복</div>
+    <div class="bg-deco bg-deco-2">수</div>
+
+    <!-- Header -->
+    <div class="header">
+      <div class="subtitle-top">첫 번째 생일 · First Birthday</div>
+      <div class="title-main">Eleanore &amp; Samson</div>
+      <div class="title-korean">돌잔치</div>
+      <div class="divider-row">
+        <div class="div-line"></div>
+        <div class="div-diamond"></div>
+        <div class="div-diamond" style="width:4px;height:4px;opacity:0.5"></div>
+        <div class="div-diamond"></div>
+        <div class="div-line r"></div>
+      </div>
+      <div class="intro">Each item on the table carries a wish. Which one will each baby reach for?</div>
+      <div style="display:inline-block; margin-top:14px; border: 1.5px solid #a07820; padding: 8px 22px; background: rgba(160,120,32,0.06); border-radius:2px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#a07820; font-weight:700;">All submissions must be recorded by 11am PT &nbsp;·&nbsp; 12pm ET SATURDAY 3/7</div>
+      </div>
+    </div>
+
+    <div class="floral">✦ ❀ ✦ ❀ ✦ ❀ ✦</div>
+
+    <!-- Items reference -->
+    <div class="section-label">The Items · 돌잡이 물건</div>
+    <div class="items-grid">
+
+      <div class="item-card">
+        <div class="item-icon">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <defs><clipPath id="bc2"><circle cx="20" cy="21" r="13"/></clipPath></defs>
+            <circle cx="20" cy="21" r="13" fill="#f9f9f9"/>
+            <g clip-path="url(#bc2)">
+              <path d="M7 14 Q13 11 20 13 Q27 15 33 12" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M7 18 Q14 15 20 17 Q26 19 33 16" stroke="#ececec" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M7 22 Q13 20 20 21 Q27 22 33 20" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M7 26 Q14 24 20 26 Q26 28 33 25" stroke="#efefef" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M8 30 Q14 28 20 30 Q26 32 32 29" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M10 10 Q16 18 14 32" stroke="#e8e8e8" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M17 8 Q20 18 18 34" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M24 8 Q22 18 25 34" stroke="#ebebeb" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M9 17 Q20 28 31 15" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M9 25 Q20 34 31 23" stroke="#eeeeee" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </g>
+            <ellipse cx="20" cy="32" rx="10" ry="2.5" fill="rgba(0,0,0,0.06)"/>
+            <circle cx="20" cy="21" r="13" fill="none" stroke="#ddd" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="item-name">White String</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">A long and blessed life, rich with years and full of grace</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🥇</div>
+        <div class="item-name">Medallion</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">Prosperity and wealth — may you always have more than you need</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🖌️</div>
+        <div class="item-name">Paintbrush</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">A creative soul, painting the world with beauty and imagination</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🖊️</div>
+        <div class="item-name">Pen</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">Scholarly brilliance — a life devoted to knowledge and learning</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🎾</div>
+        <div class="item-name">Tennis Ball</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">Athletic prowess, strength of body, and the joy of sport</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🎤</div>
+        <div class="item-name">Microphone</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">A star of the stage — performing, entertaining, and captivating hearts</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">📷</div>
+        <div class="item-name">Film Camera</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">An eye for storytelling, capturing life's most treasured moments</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🛂</div>
+        <div class="item-name">Passport</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">A world traveler and diplomat — bridging cultures, building peace</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🧭</div>
+        <div class="item-name">Compass</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">Always finding your true north — a life led by inner wisdom and good direction</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <rect x="9" y="28" width="4" height="9" rx="1" fill="#c0185a"/>
+            <line x1="9.5" y1="29" x2="9.5" y2="37" stroke="#a01048" stroke-width="0.5"/>
+            <line x1="11" y1="29" x2="11" y2="37" stroke="#a01048" stroke-width="0.5"/>
+            <line x1="12.5" y1="29" x2="12.5" y2="37" stroke="#a01048" stroke-width="0.5"/>
+            <rect x="8.5" y="27" width="5" height="2.5" rx="1" fill="#d4a017"/>
+            <rect x="27" y="28" width="4" height="9" rx="1" fill="#c0185a"/>
+            <line x1="27.5" y1="29" x2="27.5" y2="37" stroke="#a01048" stroke-width="0.5"/>
+            <line x1="29" y1="29" x2="29" y2="37" stroke="#a01048" stroke-width="0.5"/>
+            <line x1="30.5" y1="29" x2="30.5" y2="37" stroke="#a01048" stroke-width="0.5"/>
+            <rect x="26.5" y="27" width="5" height="2.5" rx="1" fill="#d4a017"/>
+            <path d="M12 18 Q10 24 11 29 Q13 34 20 34 Q27 34 29 29 Q30 24 28 18 Q26 14 20 14 Q14 14 12 18Z" fill="#d41f6a"/>
+            <path d="M14 18 Q13 23 14 27 Q15 21 20 20 Q17 19 14 18Z" fill="rgba(255,255,255,0.15)"/>
+            <text x="15" y="27" font-size="7" fill="#d4a017" font-family="serif" font-weight="bold">福</text>
+            <text x="22" y="27" font-size="7" fill="#d4a017" font-family="serif" font-weight="bold">壽</text>
+            <path d="M15 14 Q17 11 20 11 Q23 11 25 14" stroke="#c0185a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M17 11 Q18 8 20 7 Q22 8 23 11" stroke="#c0185a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <circle cx="20" cy="6" r="3" fill="#c0185a"/>
+            <path d="M18 6 Q20 4 22 6 Q20 8 18 6Z" fill="#f0c040"/>
+            <path d="M20 4 Q22 6 20 8 Q18 6 20 4Z" fill="#4caf50" opacity="0.8"/>
+            <line x1="20" y1="3" x2="20" y2="1" stroke="#c0185a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="item-name">복주머니</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">Bokjeumoni — a lucky pouch brimming with good fortune, charm and happiness</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">🧮</div>
+        <div class="item-name">Calculator</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">Scientific curiosity and analytical brilliance — a mind that unlocks the mysteries of the universe</div>
+      </div>
+
+      <div class="item-card">
+        <div class="item-icon">
+          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+            <rect x="17" y="24" width="6" height="13" rx="3" fill="#222" stroke="#111" stroke-width="0.5"/>
+            <rect x="16.5" y="21.5" width="7" height="4" rx="1.5" fill="#c0c0c0" stroke="#999" stroke-width="0.5"/>
+            <path d="M20 22 C8 19 5 10 9 5 C12 1 20 2 20 2 C20 2 28 1 31 5 C35 10 32 19 20 22Z" fill="none" stroke="#b0b0b0" stroke-width="1.4"/>
+            <path d="M20 22 C9 17 7 9 11 4.5" fill="none" stroke="#b8b8b8" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M20 22 C31 17 33 9 29 4.5" fill="none" stroke="#b8b8b8" stroke-width="1.1" stroke-linecap="round"/>
+            <path d="M20 22 C10 16 9 8 13 4" fill="none" stroke="#c0c0c0" stroke-width="0.9" stroke-linecap="round"/>
+            <path d="M20 22 C30 16 31 8 27 4" fill="none" stroke="#c0c0c0" stroke-width="0.9" stroke-linecap="round"/>
+            <path d="M20 22 C12 15 12 7 16 3.5" fill="none" stroke="#c8c8c8" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M20 22 C28 15 28 7 24 3.5" fill="none" stroke="#c8c8c8" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M20 22 C15 14 15 6 18.5 3" fill="none" stroke="#d0d0d0" stroke-width="0.7" stroke-linecap="round"/>
+            <path d="M20 22 C25 14 25 6 21.5 3" fill="none" stroke="#d0d0d0" stroke-width="0.7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="item-name">Whisk</div>
+        <div class="item-divider-sm"></div>
+        <div class="item-meaning">The gift of nourishing others — bringing warmth, creativity, and joy to every table</div>
+      </div>
+
+    </div>
+
+    <!-- ── PREDICTION BLOCKS ── -->
+    <div class="divider-row" style="margin-bottom:16px">
+      <div class="div-line"></div>
+      <div class="div-diamond"></div>
+      <div class="div-diamond" style="width:4px;height:4px;opacity:0.5"></div>
+      <div class="div-diamond"></div>
+      <div class="div-line r"></div>
+    </div>
+    <div class="section-label" style="margin-bottom:16px;">예언 · Make Your Predictions</div>
+
+    <div id="mainForm">
+      <div class="prediction-wrapper">
+
+        <!-- ELEANORE -->
+        <div class="pred-block eleanore">
+          <div class="pred-header">
+            <span class="pred-name-eng">Eleanore</span>
+            <span class="pred-name-kor">예진</span>
+          </div>
+          <div class="pred-divider"></div>
+          <div class="pred-instruction">Tap what you think she'll pick</div>
+          <div class="pick-grid" id="eleanore-grid">
+            <button class="pick-btn" onclick="selectPick('eleanore','White String')">
+              <span class="pick-btn-icon"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><defs><clipPath id="yb1"><circle cx="20" cy="21" r="13"/></clipPath></defs><circle cx="20" cy="21" r="13" fill="#f9f9f9"/><g clip-path="url(#yb1)"><path d="M7 14 Q13 11 20 13 Q27 15 33 12" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M7 18 Q14 15 20 17 Q26 19 33 16" stroke="#e8e8e8" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M7 22 Q13 20 20 21 Q27 22 33 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M7 26 Q14 24 20 26 Q26 28 33 25" stroke="#ebebeb" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M17 8 Q20 18 18 34" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M24 8 Q22 18 25 34" stroke="#e8e8e8" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M9 17 Q20 28 31 15" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/></g><circle cx="20" cy="21" r="13" fill="none" stroke="#ccc" stroke-width="1"/></svg></span><span class="pick-btn-label">White String</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Medallion')">
+              <span class="pick-btn-icon">🥇</span><span class="pick-btn-label">Medallion</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Paintbrush')">
+              <span class="pick-btn-icon">🖌️</span><span class="pick-btn-label">Paintbrush</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Pen')">
+              <span class="pick-btn-icon">🖊️</span><span class="pick-btn-label">Pen</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Tennis Ball')">
+              <span class="pick-btn-icon">🎾</span><span class="pick-btn-label">Tennis Ball</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Microphone')">
+              <span class="pick-btn-icon">🎤</span><span class="pick-btn-label">Microphone</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Film Camera')">
+              <span class="pick-btn-icon">📷</span><span class="pick-btn-label">Film Camera</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Passport')">
+              <span class="pick-btn-icon">🛂</span><span class="pick-btn-label">Passport</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Compass')">
+              <span class="pick-btn-icon">🧭</span><span class="pick-btn-label">Compass</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','복주머니')">
+              <span class="pick-btn-icon">👛</span><span class="pick-btn-label">복주머니</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Calculator')">
+              <span class="pick-btn-icon">🧮</span><span class="pick-btn-label">Calculator</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('eleanore','Whisk')">
+              <span class="pick-btn-icon"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect x="17" y="24" width="6" height="13" rx="3" fill="#222"/><rect x="16.5" y="21.5" width="7" height="4" rx="1.5" fill="#c0c0c0"/><path d="M20 22 C8 19 5 10 9 5 C12 1 20 2 20 2 C20 2 28 1 31 5 C35 10 32 19 20 22Z" fill="none" stroke="#b0b0b0" stroke-width="1.6"/><path d="M20 22 C9 17 7 9 11 4.5" fill="none" stroke="#b8b8b8" stroke-width="1.2" stroke-linecap="round"/><path d="M20 22 C31 17 33 9 29 4.5" fill="none" stroke="#b8b8b8" stroke-width="1.2" stroke-linecap="round"/><path d="M20 22 C12 15 12 7 16 3.5" fill="none" stroke="#c8c8c8" stroke-width="0.9" stroke-linecap="round"/><path d="M20 22 C28 15 28 7 24 3.5" fill="none" stroke="#c8c8c8" stroke-width="0.9" stroke-linecap="round"/></svg></span><span class="pick-btn-label">Whisk</span>
+            </button>
+          </div>
+          <div class="selected-display" id="eleanore-display">
+            <span class="chosen-label">Your pick: </span><span class="chosen-value" id="eleanore-val">—</span>
+          </div>
+        </div>
+
+        <!-- SAMSON -->
+        <div class="pred-block samson">
+          <div class="pred-header">
+            <span class="pred-name-eng">Samson</span>
+            <span class="pred-name-kor">예준</span>
+          </div>
+          <div class="pred-divider"></div>
+          <div class="pred-instruction">Tap what you think he'll pick</div>
+          <div class="pick-grid" id="samson-grid">
+            <button class="pick-btn" onclick="selectPick('samson','White String')">
+              <span class="pick-btn-icon"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><defs><clipPath id="yb2"><circle cx="20" cy="21" r="13"/></clipPath></defs><circle cx="20" cy="21" r="13" fill="#f9f9f9"/><g clip-path="url(#yb2)"><path d="M7 14 Q13 11 20 13 Q27 15 33 12" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M7 18 Q14 15 20 17 Q26 19 33 16" stroke="#e8e8e8" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M7 22 Q13 20 20 21 Q27 22 33 20" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M7 26 Q14 24 20 26 Q26 28 33 25" stroke="#ebebeb" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M17 8 Q20 18 18 34" stroke="white" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M24 8 Q22 18 25 34" stroke="#e8e8e8" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M9 17 Q20 28 31 15" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/></g><circle cx="20" cy="21" r="13" fill="none" stroke="#ccc" stroke-width="1"/></svg></span><span class="pick-btn-label">White String</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Medallion')">
+              <span class="pick-btn-icon">🥇</span><span class="pick-btn-label">Medallion</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Paintbrush')">
+              <span class="pick-btn-icon">🖌️</span><span class="pick-btn-label">Paintbrush</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Pen')">
+              <span class="pick-btn-icon">🖊️</span><span class="pick-btn-label">Pen</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Tennis Ball')">
+              <span class="pick-btn-icon">🎾</span><span class="pick-btn-label">Tennis Ball</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Microphone')">
+              <span class="pick-btn-icon">🎤</span><span class="pick-btn-label">Microphone</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Film Camera')">
+              <span class="pick-btn-icon">📷</span><span class="pick-btn-label">Film Camera</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Passport')">
+              <span class="pick-btn-icon">🛂</span><span class="pick-btn-label">Passport</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Compass')">
+              <span class="pick-btn-icon">🧭</span><span class="pick-btn-label">Compass</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','복주머니')">
+              <span class="pick-btn-icon">👛</span><span class="pick-btn-label">복주머니</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Calculator')">
+              <span class="pick-btn-icon">🧮</span><span class="pick-btn-label">Calculator</span>
+            </button>
+            <button class="pick-btn" onclick="selectPick('samson','Whisk')">
+              <span class="pick-btn-icon"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect x="17" y="24" width="6" height="13" rx="3" fill="#222"/><rect x="16.5" y="21.5" width="7" height="4" rx="1.5" fill="#c0c0c0"/><path d="M20 22 C8 19 5 10 9 5 C12 1 20 2 20 2 C20 2 28 1 31 5 C35 10 32 19 20 22Z" fill="none" stroke="#b0b0b0" stroke-width="1.6"/><path d="M20 22 C9 17 7 9 11 4.5" fill="none" stroke="#b8b8b8" stroke-width="1.2" stroke-linecap="round"/><path d="M20 22 C31 17 33 9 29 4.5" fill="none" stroke="#b8b8b8" stroke-width="1.2" stroke-linecap="round"/><path d="M20 22 C12 15 12 7 16 3.5" fill="none" stroke="#c8c8c8" stroke-width="0.9" stroke-linecap="round"/><path d="M20 22 C28 15 28 7 24 3.5" fill="none" stroke="#c8c8c8" stroke-width="0.9" stroke-linecap="round"/></svg></span><span class="pick-btn-label">Whisk</span>
+            </button>
+          </div>
+          <div class="selected-display" id="samson-display">
+            <span class="chosen-label">Your pick: </span><span class="chosen-value" id="samson-val">—</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Name -->
+      <div class="name-section">
+        <div class="name-label">
+          <span class="eng">Your Name</span>
+          <span class="kor">이름</span>
+        </div>
+        <div class="name-divider-v"></div>
+        <input class="name-input" type="text" id="guestName" placeholder="Enter your name…" />
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-area">
+        <button class="submit-btn" id="submitBtn" onclick="submitPrediction()">Submit Prediction ✦</button>
+        <div class="error-msg" id="errorMsg">Please make a pick for both babies and enter your name!</div>
+        <div class="prize-note">Whoever predicts correctly wins a prize! 🎉</div>
+      </div>
+    </div>
+
+    <!-- Success screen -->
+    <div class="success-screen" id="successScreen">
+      <div class="success-emoji">🎊</div>
+      <div class="success-title">Prediction Submitted!</div>
+      <div class="success-sub">May the best guesser win. See you at the 돌잔치!</div>
+      <div class="success-picks">
+        <div class="success-pick">
+          <div class="sp-name eleanore-color">👧🏻 Eleanore 예진</div>
+          <div class="sp-value" id="success-eleanore"></div>
+        </div>
+        <div style="width:1px;background:#e8d9c0;"></div>
+        <div class="success-pick">
+          <div class="sp-name samson-color">👦🏻 Samson 예준</div>
+          <div class="sp-value" id="success-samson"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="divider-row" style="margin-bottom:8px">
+        <div class="div-line"></div>
+        <div class="div-diamond"></div>
+        <div class="div-diamond" style="width:4px;height:4px;opacity:0.5"></div>
+        <div class="div-diamond"></div>
+        <div class="div-line r"></div>
+      </div>
+      <div class="footer-korean">건강 · 행복 · 사랑</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── REPLACE THIS WITH YOUR GOOGLE APPS SCRIPT DEPLOYMENT URL ──
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwvEs5rMRWqd7IvAnhmobaxl_pqzB9Z4Kfn0zMM4D1zPjP8me-kvdIWetm8cfDFqixMWg/exec';
+
+  const picks = { eleanore: null, samson: null };
+
+  function selectPick(baby, item) {
+    picks[baby] = item;
+
+    // Update button highlights
+    const grid = document.getElementById(`${baby}-grid`);
+    grid.querySelectorAll('.pick-btn').forEach(btn => {
+      btn.classList.remove('selected');
+      if (btn.querySelector('.pick-btn-label').textContent === item) {
+        btn.classList.add('selected');
+      }
+    });
+
+    // Update display
+    document.getElementById(`${baby}-val`).textContent = item;
+  }
+
+  async function submitPrediction() {
+    const name = document.getElementById('guestName').value.trim();
+    const errorMsg = document.getElementById('errorMsg');
+
+    if (!picks.eleanore || !picks.samson || !name) {
+      errorMsg.classList.add('visible');
+      return;
+    }
+    errorMsg.classList.remove('visible');
+
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    const payload = {
+      name: name,
+      eleanore: picks.eleanore,
+      samson: picks.samson,
+      timestamp: new Date().toISOString()
+    };
+
+    try {
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (e) {
+      // no-cors swallows errors; assume success
+    }
+
+    // Show success
+    document.getElementById('success-eleanore').textContent = picks.eleanore;
+    document.getElementById('success-samson').textContent = picks.samson;
+    document.getElementById('mainForm').style.display = 'none';
+    document.getElementById('successScreen').classList.add('visible');
+  }
+</script>
+
+</div>
+</body>
+</html>
